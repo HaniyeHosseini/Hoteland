@@ -12,5 +12,10 @@ namespace Hoteland.Domain.Models
         public string Name { get; set; }
         public string Picture { get; set; }
 
+        public Feature(string name , string picture)
+        {
+            Name = name;
+            Picture = picture;
+        }
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host", "Host\Host.csproj", "{B7A569AA-11C0-4D0E-8619-172A79D8632B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host", "Host\Host.csproj", "{B7A569AA-11C0-4D0E-8619-172A79D8632B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E1079147-32F1-4D0A-833F-34FF5920744E}"
 EndProject
@@ -11,13 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{80237BE6-278D-42BD-B573-81E813DFD6F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoteland.Application", "Hoteland.Application\Hoteland.Application.csproj", "{AA5AD1EA-B273-43EB-8235-FD642ED8657B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hoteland.Application", "Hoteland.Application\Hoteland.Application.csproj", "{AA5AD1EA-B273-43EB-8235-FD642ED8657B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoteland.Application.Contract", "Hoteland.Application.Contract\Hoteland.Application.Contract.csproj", "{27923CC2-AA84-4AB0-BD5F-102E99B097D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hoteland.Application.Contract", "Hoteland.Application.Contract\Hoteland.Application.Contract.csproj", "{27923CC2-AA84-4AB0-BD5F-102E99B097D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoteland.Domain", "Hoteland.Domain\Hoteland.Domain.csproj", "{F0D38874-61B1-45D1-BCE7-9D69E1E03A26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hoteland.Domain", "Hoteland.Domain\Hoteland.Domain.csproj", "{F0D38874-61B1-45D1-BCE7-9D69E1E03A26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoteland.Infrastructure", "Hoteland.Infrastructure\Hoteland.Infrastructure.csproj", "{FE6B0584-0BEA-4414-9CD6-BDF190FE7DE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hoteland.Infrastructure", "Hoteland.Infrastructure\Hoteland.Infrastructure.csproj", "{FE6B0584-0BEA-4414-9CD6-BDF190FE7DE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C5C54FFD-A171-4C53-990B-18EBF89A59C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoteland.Common", "Hoteland.Common\Hoteland.Common.csproj", "{37E2BD2E-7C66-4066-92BA-B8D3D6536DFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,10 @@ Global
 		{FE6B0584-0BEA-4414-9CD6-BDF190FE7DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE6B0584-0BEA-4414-9CD6-BDF190FE7DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE6B0584-0BEA-4414-9CD6-BDF190FE7DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37E2BD2E-7C66-4066-92BA-B8D3D6536DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37E2BD2E-7C66-4066-92BA-B8D3D6536DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37E2BD2E-7C66-4066-92BA-B8D3D6536DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37E2BD2E-7C66-4066-92BA-B8D3D6536DFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +62,7 @@ Global
 		{27923CC2-AA84-4AB0-BD5F-102E99B097D2} = {4BC8BC78-3C11-4B14-8BDF-01C5E52B49E3}
 		{F0D38874-61B1-45D1-BCE7-9D69E1E03A26} = {E1079147-32F1-4D0A-833F-34FF5920744E}
 		{FE6B0584-0BEA-4414-9CD6-BDF190FE7DE3} = {80237BE6-278D-42BD-B573-81E813DFD6F1}
+		{37E2BD2E-7C66-4066-92BA-B8D3D6536DFA} = {C5C54FFD-A171-4C53-990B-18EBF89A59C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F22942AD-DC9C-4B67-AE2F-2A658C890BEB}
