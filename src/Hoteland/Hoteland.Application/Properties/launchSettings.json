@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Hoteland.Application": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:52474;http://localhost:52478"
+    }
+  }
+}
