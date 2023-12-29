@@ -13,5 +13,6 @@ namespace Hoteland.Application.Contract.Feature
         OperationResult Update(string name, string picture , long ID);
         OperationResult Remove(long ID);
         IList<FeatureDto> GetFeatures();
+        FeatureDto GetFeatureByID(long ID);
     }
 }

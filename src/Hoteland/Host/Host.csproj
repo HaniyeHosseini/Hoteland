@@ -17,7 +17,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Hoteland.Application.Contract\Hoteland.Application.Contract.csproj" />
+    <ProjectReference Include="..\Hoteland.Bootsraper\Hoteland.Bootsrapper.csproj" />
     <ProjectReference Include="..\Hoteland.Infrastructure\Hoteland.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\Features\" />
   </ItemGroup>
 
 </Project>

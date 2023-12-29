@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hoteland.Infrastructure.Repository.Implements
 {
-    public class FeatureRepository : BaseRepository<Feature>, IBaseRepository<Feature>
+    public class FeatureRepository : BaseRepository<Feature>, IBaseRepository<Feature> , IFeatureRepository
     {
         public FeatureRepository(HotelandContext context) : base(context)
         {

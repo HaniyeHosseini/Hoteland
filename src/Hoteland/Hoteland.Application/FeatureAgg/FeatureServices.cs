@@ -14,18 +14,30 @@ namespace Hoteland.Application.FeatureAgg
             _featureRepository = featureRepository;
         }
 
-        public IList<FeatureDto> GetFeatures()
+		public FeatureDto GetFeatureByID(long ID)
+		{
+            var feature = _featureRepository.GetByID(ID); 
+            return new FeatureDto()
+            {
+                Name = feature.Name,
+                ID = feature.ID,
+                PicturePath = feature.Picture
+            };
+		}
+
+		public IList<FeatureDto> GetFeatures()
         {
             var features = _featureRepository.GetAll();
             var featureDtos = new List<FeatureDto>(features.Count);
             foreach (var item in features)
             {
-                var featureDto = new FeatureDto() {
+                var featureDto = new FeatureDto()
+                {
                     ID = item.ID,
                     CreationDate = item.CreationDate,
                     LastUpdateDate = item.LastUpdateDate,
                     Name = item.Name,
-                    Picture = item.Picture
+                    PicturePath = item.Picture , 
                 };
                 featureDtos.Add(featureDto);
             }

@@ -1,4 +1,5 @@
 using Host.Data;
+using Hoteland.Bootsrapper;
 using Hoteland.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,8 +11,7 @@ var connectionString = builder.Configuration.GetConnectionString("HotelandConnec
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-builder.Services.AddDbContext<HotelandContext>(options =>
-    options.UseSqlServer(connectionString));
+Bootsrapper.Configure(builder.Services, connectionString);
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
@@ -38,5 +38,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Feature}/{action=Index}/{id?}");
 app.Run();
