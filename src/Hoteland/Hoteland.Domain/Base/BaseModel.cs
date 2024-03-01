@@ -11,7 +11,10 @@ namespace Hoteland.Domain.Base
         public long ID { get; set; }
         public DateTime CreationDate { get; set; }
         public DateTime LastUpdateDate { get; set; }
-
+        public BaseModel()
+        {
+            CreationDate = DateTime.Now;
+        }
 
     }
 }

@@ -41,4 +41,6 @@ app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Feature}/{action=Index}/{id?}");
+
+
 app.Run();

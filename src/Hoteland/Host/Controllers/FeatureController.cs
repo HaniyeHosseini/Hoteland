@@ -13,20 +13,22 @@ namespace Host.Controllers
 			_featureServices = featureServices;
 			_hostingEnvironment = hostingEnvironment;
 		}
-
+		[Route("Feature")]
 		public IActionResult Index()
 		{
-
 			var features = _featureServices.GetFeatures();
 			return View(features);
 		}
 		[HttpGet]
-		public IActionResult Create()
+        [Route("/Create")]
+        public IActionResult Create()
 		{
 			return View();
 		}
 		[HttpPost]
-		public IActionResult Create(FeatureDto feature)
+        [Route("/Create")]
+
+        public IActionResult Create(FeatureDto feature)
 		{
 			
 			if (feature.Picture != null)
@@ -44,14 +46,15 @@ namespace Host.Controllers
 				
 		}
 		[HttpGet]
-		public IActionResult Update(long ID)
+        [Route("/Update")]
+        public IActionResult Update(long ID)
 		{
 			var feature = _featureServices.GetFeatureByID(ID);
 			return View(feature);
 		}
 		[HttpPost]
-
-		public IActionResult Update(FeatureDto feature)
+        [Route("/Update")]
+        public IActionResult Update(FeatureDto feature)
 		{
 			if (feature.Picture != null)
 			{
@@ -66,11 +69,11 @@ namespace Host.Controllers
 
 			return RedirectToAction("Index");
 		}
-		public IActionResult Remove(long ID)
+        [Route("/Remove")]
+        public IActionResult Remove(long ID)
 		{
 			_featureServices.Remove(ID);
             return RedirectToAction("Index");
-
         }
 
     }

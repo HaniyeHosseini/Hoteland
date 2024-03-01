@@ -22,6 +22,63 @@ namespace Hoteland.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Hoteland.Domain.Models.City", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<long>("CountryID")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("CountryID");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("City", (string)null);
+                });
+
+            modelBuilder.Entity("Hoteland.Domain.Models.Country", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Country", (string)null);
+                });
+
             modelBuilder.Entity("Hoteland.Domain.Models.Feature", b =>
                 {
                     b.Property<long>("ID")
@@ -38,7 +95,7 @@ namespace Hoteland.Infrastructure.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Picture")
                         .IsRequired()
@@ -46,7 +103,26 @@ namespace Hoteland.Infrastructure.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Features");
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Feature", (string)null);
+                });
+
+            modelBuilder.Entity("Hoteland.Domain.Models.City", b =>
+                {
+                    b.HasOne("Hoteland.Domain.Models.Country", "Country")
+                        .WithMany("Cities")
+                        .HasForeignKey("CountryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Country");
+                });
+
+            modelBuilder.Entity("Hoteland.Domain.Models.Country", b =>
+                {
+                    b.Navigation("Cities");
                 });
 #pragma warning restore 612, 618
         }

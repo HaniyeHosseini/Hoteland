@@ -16,6 +16,7 @@ namespace Hoteland.Domain.Models
         {
             Name = name;
             Picture = picture;
+            CreationDate = DateTime.Now;
         }
     }
 }

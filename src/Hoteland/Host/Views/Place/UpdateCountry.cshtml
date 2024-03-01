@@ -1,0 +1,20 @@
+﻿@model Hoteland.Application.Contract.Place.CountryDto
+<div class="row">
+	<div class="col-lg-12 animatedParent animateOnce z-index-47">
+		<div class="panel panel-default animated fadeInUp">
+			<div class="panel-body">
+				<form class="form-horizontal" asp-controller="Place" asp-action="UpdateCountry" enctype="multipart/form-data">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">نام</label>
+						<div class="col-sm-10">
+							<input type="text" placeholder="لطفا نام کشور را وارد نمایید :" class="form-control" asp-for="Name" value="@Model.Name">
+						</div>
+					</div>
+					<input type="hidden" asp-for="ID" value="@Model.ID"/>
+					<button type="submit" class="btn btn-success">ذخیره</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+

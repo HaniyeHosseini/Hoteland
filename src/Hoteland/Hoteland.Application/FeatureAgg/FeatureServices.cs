@@ -85,6 +85,7 @@ namespace Hoteland.Application.FeatureAgg
                 var feature = _featureRepository.GetByID(ID);
                 feature.Name = name;
                 feature.Picture = picture;
+                feature.LastUpdateDate = DateTime.Now;
                 _featureRepository.Update(feature);
                 op.Succeded();
                 return op;
