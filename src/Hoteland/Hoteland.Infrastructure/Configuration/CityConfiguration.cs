@@ -17,6 +17,7 @@ namespace Hoteland.Infrastructure.Configuration
             builder.HasKey(x => x.ID);
             builder.HasOne(x => x.Country).WithMany(x => x.Cities).HasForeignKey(x => x.CountryID);
             builder.HasIndex(x => x.Name).IsUnique();
+            builder.HasMany(x => x.Hotels).WithOne(x => x.City).HasForeignKey(x => x.CityID).OnDelete(DeleteBehavior.NoAction);
 
         }
     }

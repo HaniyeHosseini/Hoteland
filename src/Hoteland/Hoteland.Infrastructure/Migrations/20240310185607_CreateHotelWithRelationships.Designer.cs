@@ -4,6 +4,7 @@ using Hoteland.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NetTopologySuite.Geometries;
 
@@ -12,9 +13,11 @@ using NetTopologySuite.Geometries;
 namespace Hoteland.Infrastructure.Migrations
 {
     [DbContext(typeof(HotelandContext))]
-    partial class HotelandContextModelSnapshot : ModelSnapshot
+    [Migration("20240310185607_CreateHotelWithRelationships")]
+    partial class CreateHotelWithRelationships
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
