@@ -12,10 +12,13 @@ namespace Hoteland.Domain.Models
         public string Name { get; set; }
         public long CountryID { get; set; }
         public virtual Country Country { get; set; }
+        public ICollection<Hotel> Hotels { get; set; }
+
         public City(string name , long countryID)
         {
             Name = name;
             CountryID = countryID;
+            Hotels = new List<Hotel>();
         }
     }
 }

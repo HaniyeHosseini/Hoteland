@@ -22,7 +22,7 @@ namespace Hoteland.Bootsrapper
             services.AddTransient<ICountryService, CountryService>();
             services.AddTransient<ICityService, CityService>();
 
-            services.AddDbContext<HotelandContext>(x => x.UseSqlServer(connectionString));
+            services.AddDbContext<HotelandContext>(x => x.UseSqlServer(connectionString,x=> x.UseNetTopologySuite()));
         }
     }
 }
