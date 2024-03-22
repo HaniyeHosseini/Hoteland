@@ -9,5 +9,6 @@ namespace Hoteland.Infrastructure.Repository.Interfaces
 {
     public interface IFeatureRepository:IBaseRepository<Feature>
     {
+        IList<Feature> GetFeaturesByHotelID(long  hotelID);
     }
 }

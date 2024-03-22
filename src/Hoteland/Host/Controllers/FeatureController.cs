@@ -1,10 +1,10 @@
-﻿using Hoteland.Application.Contract.Feature;
+﻿using Hoteland.Application.Contract.FeatureAgg;
 using Hoteland.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Host.Controllers
 {
-	public class FeatureController : Controller
+    public class FeatureController : Controller
 	{
 		private readonly IFeatureServices _featureServices;
 		private readonly IWebHostEnvironment _hostingEnvironment;

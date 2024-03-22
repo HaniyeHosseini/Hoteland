@@ -19,5 +19,8 @@ namespace Hoteland.Domain.Models
             Cities = new List<City>();
             Hotels = new List<Hotel>();
         }
+        public Country()
+        {
+        }
     }
 }
