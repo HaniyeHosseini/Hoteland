@@ -9,10 +9,10 @@ namespace Hoteland.Application.Contract.Hotel
 {
     public interface IHotelService
     {
-        OperationResult InsertHotel(HotelDto hotel);
-        OperationResult UpdateHotel(HotelDto hotel);
+        OperationResult InsertHotel(HotelDto hotel , string pathPicture);
+        OperationResult UpdateHotel(HotelDto hotel, string pathPicture);
         OperationResult DeleteHotel(long ID);
         HotelDto GetHotel(long ID);
-        IList<HotelDto> GetAllHotel();
+        IList<HotelDto> GetAllHotels();
     }
 }

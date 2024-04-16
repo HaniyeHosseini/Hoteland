@@ -37,7 +37,7 @@ namespace Hoteland.Application.HotelAgg
             return op;
         }
 
-        public IList<HotelDto> GetAllHotel()
+        public IList<HotelDto> GetAllHotels()
         {
             var hotels = _hotelRepository.GetAll();
             var hotelDtos = new List<HotelDto>();
@@ -56,7 +56,7 @@ namespace Hoteland.Application.HotelAgg
             return hotelDto;
         }
 
-        public OperationResult InsertHotel(HotelDto hotel)
+        public OperationResult InsertHotel(HotelDto hotel, string pathPicture)
         {
             var op = new OperationResult();
             try
@@ -67,7 +67,7 @@ namespace Hoteland.Application.HotelAgg
                 entity.HotelStar = (HotelStar)hotel.HotelStar;
                 entity.PictureTitle = hotel.PictureTitle;
                 entity.PictureAlt = hotel.PictureAlt;
-                entity.Picture = hotel.PicturePath;
+                entity.Picture = pathPicture;
                 entity.City = new City { ID = hotel.CityID};
                 entity.Country = new Country { ID = hotel.CountryID};
                 entity.CountryID = hotel.CountryID;
@@ -86,7 +86,7 @@ namespace Hoteland.Application.HotelAgg
             }
         }
 
-        public OperationResult UpdateHotel(HotelDto hotel)
+        public OperationResult UpdateHotel(HotelDto hotel, string pathPicture)
         {
             var op = new OperationResult();
             try
@@ -97,7 +97,7 @@ namespace Hoteland.Application.HotelAgg
                 entity.HotelStar = (HotelStar)hotel.HotelStar;
                 entity.PictureTitle = hotel.PictureTitle;
                 entity.PictureAlt = hotel.PictureAlt;
-                entity.Picture = hotel.PicturePath;
+                entity.Picture = pathPicture;
                 entity.City = new City { ID = hotel.CityID };
                 entity.Country = new Country { ID = hotel.CountryID };
                 entity.CountryID = hotel.CountryID;

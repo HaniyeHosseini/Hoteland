@@ -1,0 +1,97 @@
+﻿@model IList<Hoteland.Application.Contract.Hotel.HotelDto>
+<div class="header-secondary row gray-bg">
+    <div class="col-lg-12">
+        <div class="page-heading clearfix">
+            <a class="btn btn-primary btn-sm btn-add" asp-controller="Hotel" asp-action="Create">اضافه کردن هتل جدید</a>
+        </div>
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb breadcrumb-2">
+            <li><a href="index-2.html"><i class="fa fa-home"></i> داشبورد</a></li>
+            <li class="active"><strong>هتل</strong></li>
+        </ol>
+        <div class="tab-wrapper clearfix">
+            <ul class="nav nav-pills nav-pills-default pull-left">
+                <li role="presentation"><a href="simple-view.html">STYLE 1</a></li>
+                <li role="presentation"><a href="cards-view.html">STYLE 2</a></li>
+                <li role="presentation"><a href="strip-view.html">STYLE 3</a></li>
+                <li class="active" role="presentation"><a href="table-view.html">STYLE 4</a></li>
+            </ul>
+            <ul class="nav nav-pills nav-icons pull-right">
+                <li role="presentation"><a href="#"><i class="icon-layout"></i></a></li>
+                <li class="active" role="presentation"><a href="#"><i class="icon-list"></i></a></li>
+                <li role="presentation"><a href="#" class="toggle-filter" data-block-id="filter-box"><i class="fa fa-filter"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row datatable-wrapper form-inline">
+    <div class="col-lg-12">
+        <div class="data-col-first clearfix">
+            <div class="col-checkbox col-space">
+                <div class="form-checkbox">
+                    <input type="checkbox" value="" name=""> <span class="check"><i class="fa fa-check"></i></span>
+                </div>
+            </div>
+            <div class="col-selectbox">
+                <select class="form-control input-sm">
+                    <option>Bulk Action</option>
+                    <option>Bulk Action</option>
+                    <option>Bulk Action</option>
+                </select>&nbsp;
+                <button class="btn btn-primary btn-sm">Go</button>
+            </div>
+        </div>
+        <div class="data-col-last clearfix">
+            <div class="col-selectbox">
+                <select class="form-control input-sm">
+                    <option>Sort By</option>
+                    <option>Sort By</option>
+                    <option>Sort By</option>
+                </select>
+            </div>
+            <div class="col-selectbox">
+                <select class="form-control input-sm">
+                    <option>25 Records</option>
+                    <option>10 Records</option>
+                    <option>50 Records</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="animatedParent animateOnce z-index-50">
+    <div class="table-responsive animated fadeInUp">
+        <table class="table table-users table-hover">
+            <thead>
+                <tr>
+                    <th class="size-60"></th>
+                    <th class="size-80"></th>
+                    <th>نام</th>
+                    <th>کشور</th>
+                    <th>شهر</th>
+                    <th>آدرس</th>
+                    <th>تلفن</th>
+                    <th>توضیحات</th>
+                    <th>رده بندی هتل</th>
+                    <th class="text-centersize-80">فعالیت ها</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="size-60"><div class="form-checkbox"><input type="checkbox" name="name1" value=""> <span class="check"><i class="fa fa-check"></i></span></div></td>
+                        <td class="size-80"><img class="avatar img-circle" src="~/images//@item.PicturePath" alt="" title=""></td>
+                        <td><strong>@item.Name</strong></td>
+                        <td><strong>@item.Country</strong></td>
+                        <td><strong>@item.City</strong></td>
+                        <td><strong>@item.Address</strong></td>
+                        <td><strong>@item.Tell</strong></td>
+                        <td><strong>@item.Description</strong></td>
+                        <td><strong>@item.HotelStar</strong></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,6 +1,8 @@
 ﻿using Hoteland.Application.Contract.FeatureAgg;
+using Hoteland.Application.Contract.Hotel;
 using Hoteland.Application.Contract.Place;
 using Hoteland.Application.FeatureAgg;
+using Hoteland.Application.HotelAgg;
 using Hoteland.Application.PlaceAgg;
 using Hoteland.Common;
 using Hoteland.Domain.Base;
@@ -22,6 +24,7 @@ namespace Hoteland.Bootsrapper
             services.AddTransient<ICountryService, CountryService>();
             services.AddTransient<ICityService, CityService>();
             services.AddTransient<IHotelRepository , HotelRepository>();
+            services.AddTransient<IHotelService, HotelService>();
             services.AddDbContext<HotelandContext>(x => x.UseSqlServer(connectionString,x=> x.UseNetTopologySuite()));
         }
     }

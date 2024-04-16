@@ -21,7 +21,7 @@ namespace Hoteland.Infrastructure.Configuration
             builder.Property(x => x.Location).IsRequired().HasColumnType("geography");
             builder.Property(x => x.Picture).IsRequired();
             builder.Property(x => x.PictureAlt).IsRequired();
-            builder.Property(x => x.PictureAlt).IsRequired();
+            builder.Property(x => x.PictureTitle).IsRequired();
             builder.Property(x=>x.CountryID).IsRequired(false);
             builder.Property(x => x.CityID).IsRequired(false);
             builder.HasOne(x => x.Country).WithMany(x => x.Hotels).HasForeignKey(x => x.CountryID).OnDelete(DeleteBehavior.NoAction).HasConstraintName("FK_Hotel_Country");

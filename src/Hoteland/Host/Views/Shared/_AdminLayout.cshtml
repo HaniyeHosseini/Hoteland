@@ -9,14 +9,14 @@
     <meta name="keywords" content="Responsive, HTML5, admin theme, business, professional, Mouldifi, web design, CSS3">
     <title>Mouldifi | Dashboard</title>
     <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
-    <link href="css/entypo.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/plugins/css3-animate-it-plugin/animations.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/mouldifi-core.css" rel="stylesheet">
-    <link href="css/mouldifi-forms.css" rel="stylesheet">
-    <link href="css/bootstrap-rtl.min.css" rel="stylesheet">
-    <link href="css/mouldifi-rtl-core.css" rel="stylesheet">
+    <link href="/css/entypo.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/plugins/css3-animate-it-plugin/animations.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/mouldifi-core.css" rel="stylesheet">
+    <link href="/css/mouldifi-forms.css" rel="stylesheet">
+    <link href="/css/bootstrap-rtl.min.css" rel="stylesheet">
+    <link href="/css/mouldifi-rtl-core.css" rel="stylesheet">
 </head>
 <body>
 
@@ -41,7 +41,7 @@
                         <li class="active"><a asp-controller="Feature" asp-action="Index"><span class="title"> امکانات</span></a></li>
                         <li class="active"><a asp-controller="Place" asp-action="GetCountries"><span class="title"> کشورها</span></a></li>
                         <li class="active"><a asp-controller="Place" asp-action="GetCities"><span class="title"> شهرها</span></a></li>
-
+                        <li class="active"><a asp-controller="Hotel" asp-action="Index"><span class="title"> هتل ها</span></a></li>
                     </ul>
                 </li>
 
@@ -196,24 +196,25 @@
     </div>
     <!-- /page container -->
     <!--Load JQuery-->
-    <script src="js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
     <!-- Load CSS3 Animate It Plugin JS -->
-    <script src="js/plugins/css3-animate-it-plugin/css3-animate-it.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metismenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/blockui-master/jquery-ui.js"></script>
-    <script src="js/plugins/blockui-master/jquery.blockUI.js"></script>
+    <script src="/js/plugins/css3-animate-it-plugin/css3-animate-it.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/plugins/metismenu/jquery.metisMenu.js"></script>
+    <script src="/js/plugins/blockui-master/jquery-ui.js"></script>
+    <script src="/js/plugins/blockui-master/jquery.blockUI.js"></script>
     <!--Float Charts-->
-    <script src="js/plugins/flot/jquery.flot.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.selection.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.pie.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.time.min.js"></script>
-    <script src="js/functions.js"></script>
+    <script src="/js/plugins/flot/jquery.flot.min.js"></script>
+    <script src="/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="/js/plugins/flot/jquery.flot.resize.min.js"></script>
+    <script src="/js/plugins/flot/jquery.flot.selection.min.js"></script>
+    <script src="/js/plugins/flot/jquery.flot.pie.min.js"></script>
+    <script src="/js/plugins/flot/jquery.flot.time.min.js"></script>
+    <script src="/js/functions.js"></script>
+    <script src="/js/DropdownFilter.js"></script>
 
     <!--ChartJs-->
-    <script src="js/plugins/chartjs/Chart.min.js"></script>
+    <script src="/js/plugins/chartjs/Chart.min.js"></script>
     <script>
         $(document).ready(function () {
             var $checkbox = $('.todo-list .checkbox input[type=checkbox]');
@@ -581,6 +582,10 @@
             });
             canvas.parentNode.parentNode.appendChild(legendHolder.firstChild);
         });
+
+       
+
+
     </script>
 </body>
 

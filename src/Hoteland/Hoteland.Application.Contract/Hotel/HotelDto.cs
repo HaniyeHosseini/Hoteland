@@ -1,4 +1,5 @@
 ﻿using Hoteland.Application.Contract.FeatureAgg;
+using Hoteland.Application.Contract.Place;
 using Microsoft.AspNetCore.Http;
 using NetTopologySuite.Geometries;
 using System;
@@ -28,5 +29,9 @@ namespace Hoteland.Application.Contract.Hotel
         public IList<FeatureDto> Features { get; set; }
         public IList<PictureDto> Pictures { get; set; }
         public Point Location { get; set; }
+        public IList<CountryDto> Countries { get; set; }
+        public IList<CityDto> Cities { get; set; }
+
+
     }
 }

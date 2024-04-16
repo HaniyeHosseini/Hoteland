@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Host.Controllers
 {
-    [Route("/")]
     public class PlaceController : Controller
     {
         private readonly ICountryService _countryService;
@@ -29,6 +28,7 @@ namespace Host.Controllers
             return View();
         }
         [HttpPost]
+        [Route("/CreateCountry")]
         public IActionResult CreateCountry(CountryDto country)
         {
             _countryService.Insert(country.Name);
