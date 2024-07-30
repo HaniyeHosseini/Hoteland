@@ -14,6 +14,17 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 Bootsrapper.Configure(builder.Services, connectionString);
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireUppercase = true;
+
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+}
+);
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
@@ -34,7 +45,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();

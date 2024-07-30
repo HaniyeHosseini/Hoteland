@@ -1,4 +1,4 @@
-﻿using Hoteland.Application.Contract.Feature;
+﻿using Hoteland.Application.Contract.FeatureAgg;
 using Hoteland.Common;
 using Hoteland.Domain.Models;
 using Hoteland.Infrastructure.Repository.Interfaces;
@@ -14,18 +14,32 @@ namespace Hoteland.Application.FeatureAgg
             _featureRepository = featureRepository;
         }
 
-		public FeatureDto GetFeatureByID(long ID)
-		{
-            var feature = _featureRepository.GetByID(ID); 
+        public IList<HotelFeature> CreateFeatures(IList<FeatureDto> features)
+        {
+            var entities = new List<HotelFeature>();
+            foreach (var feature in features)
+            {
+                entities.Add(new HotelFeature
+                {
+                    Feature = new Feature() { ID = feature.ID },
+                    Hotel = new Hotel { ID = (long)feature.HotelID }
+                });
+            }
+            return entities;
+        }
+
+        public FeatureDto GetFeatureByID(long ID)
+        {
+            var feature = _featureRepository.GetByID(ID);
             return new FeatureDto()
             {
                 Name = feature.Name,
                 ID = feature.ID,
                 PicturePath = feature.Picture
             };
-		}
+        }
 
-		public IList<FeatureDto> GetFeatures()
+        public IList<FeatureDto> GetFeatures()
         {
             var features = _featureRepository.GetAll();
             var featureDtos = new List<FeatureDto>(features.Count);
@@ -37,7 +51,26 @@ namespace Hoteland.Application.FeatureAgg
                     CreationDate = item.CreationDate,
                     LastUpdateDate = item.LastUpdateDate,
                     Name = item.Name,
-                    PicturePath = item.Picture , 
+                    PicturePath = item.Picture,
+                };
+                featureDtos.Add(featureDto);
+            }
+            return featureDtos;
+        }
+
+        public IList<FeatureDto> GetFeaturesByHotelID(long hotelID)
+        {
+            var features = _featureRepository.GetFeaturesByHotelID(hotelID);
+            var featureDtos = new List<FeatureDto>(features.Count);
+            foreach (var item in features)
+            {
+                var featureDto = new FeatureDto()
+                {
+                    ID = item.ID,
+                    CreationDate = item.CreationDate,
+                    LastUpdateDate = item.LastUpdateDate,
+                    Name = item.Name,
+                    PicturePath = item.Picture,
                 };
                 featureDtos.Add(featureDto);
             }

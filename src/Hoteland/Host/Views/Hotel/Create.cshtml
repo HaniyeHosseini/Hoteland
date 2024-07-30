@@ -1,0 +1,79 @@
+﻿@model Hoteland.Application.Contract.Hotel.HotelDto
+
+<div class="row">
+    <div class="col-lg-12 animatedParent animateOnce z-index-47">
+        <div class="panel panel-default animated fadeInUp">
+            <div class="panel-body">
+                <form class="form-horizontal" asp-controller="Hotel" asp-action="Create" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">نام</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="لطفا نام هتل را وارد نمایید " class="form-control" asp-for="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">آدرس</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="لطفا آدرس را وارد نمایید " class="form-control" asp-for="Address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">تلفن</label>
+                        <div class="col-sm-10">
+                            <input type="text"  placeholder="لطفا تلفن هتل را وارد نمایید " class="form-control" asp-for="Tell">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">کشور</label>
+                        <div class="col-sm-10">
+                            <select id="country" class="select2 form-control"  asp-for="CountryID" asp-items="@(new SelectList(Model.Countries, nameof(Hoteland.Application.Contract.Place.CountryDto.ID), nameof(Hoteland.Application.Contract.Place.CountryDto.Name)))">
+                                <option value="0">کشور را انتخاب نمایید</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">شهر</label>
+                        <div class="col-sm-10">
+                            <select id="city" class="select2 form-control" asp-for="CityID" asp-items="@(new SelectList(Model.Cities, nameof(Hoteland.Application.Contract.Place.CityDto.ID), nameof(Hoteland.Application.Contract.Place.CityDto.Name)))">
+                                <option value="0">شهر را انتخاب نمایید</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">تصویر اصلی</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" asp-for="Picture" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">alt تصویر</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="لطفا alt تصویر هتل را وارد نمایید " class="form-control" asp-for="PictureAlt">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">عنوان تصویر</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="لطفا عنوان تصویر هتل را وارد نمایید " class="form-control" asp-for="PictureTitle">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">توضیحات</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="لطفا توضیحات هتل را وارد نمایید " class="form-control" asp-for="Description">
+                        </div>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-success">ذخیره</button>
+                  
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

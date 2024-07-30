@@ -20,5 +20,9 @@ namespace Hoteland.Domain.Models
             CountryID = countryID;
             Hotels = new List<Hotel>();
         }
+        public City()
+        {
+            
+        }
     }
 }

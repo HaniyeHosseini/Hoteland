@@ -18,5 +18,8 @@ namespace Hoteland.Domain.Models
             Picture = picture;
             CreationDate = DateTime.Now;
         }
+        public Feature()
+        {
+        }
     }
 }

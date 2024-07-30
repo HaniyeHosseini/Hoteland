@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hoteland.Common", "Hoteland
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootsraper", "Bootsraper", "{2ECDEA65-091E-4AC4-9514-F7A53ADA0A3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hoteland.Bootsrapper", "Hoteland.Bootsraper\Hoteland.Bootsrapper.csproj", "{7F422ED7-D26E-4F26-9464-99259454FA0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hoteland.Bootsrapper", "Hoteland.Bootsraper\Hoteland.Bootsrapper.csproj", "{7F422ED7-D26E-4F26-9464-99259454FA0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
